@@ -1,5 +1,0 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import type { WorkProject } from "@/data/work";
-export function FeaturedCaseStudy({project}:{project:WorkProject}){return <article className="featured-case" id="featured-case-study"><div className="featured-case-image"><Image src={project.image} alt={`Abstract sample case-study artwork for ${project.title}`} fill sizes="(max-width: 820px) 100vw, 60vw"/><span className="sample-badge">Demo Content · Featured Case Study</span></div><div className="featured-case-content"><p className="eyebrow"><span>+</span>{project.division}</p><h2>{project.title}</h2><div className="case-detail"><span>Challenge</span><p>{project.challenge}</p></div><div className="case-detail"><span>Solution</span><p>{project.solution}</p></div><div className="project-services">{project.services.map(service=><span key={service}>{service}</span>)}</div><Link className="button" href={`/contact?project=${project.slug}`}>View Case Study Brief <ArrowUpRight size={16}/></Link></div></article>}

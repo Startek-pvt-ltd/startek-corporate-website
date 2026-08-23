@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import { PolicyPage } from "@/components/PolicyPage";
+
+const title="Terms of Use | Startek";
+const description="Informational terms governing use of the Startek website.";
+export const metadata:Metadata={title,description,alternates:{canonical:"/terms"},openGraph:{title,description,type:"website",url:"/terms",images:[]},twitter:{card:"summary",title,description,images:[]}};
+
+const sections=[{title:"Website purpose",content:["This website provides general information about Startek (PVT) LTD and its specialist divisions. The information is intended to support initial understanding and project discussions."]},{title:"No automatic agreement",content:["Website content, service descriptions and enquiry preparation do not create a contract, quotation, service commitment or guarantee. Project scope, pricing, timelines and responsibilities must be agreed separately."]},{title:"Content accuracy",content:["Startek aims to keep website information clear and current, but service details may change. Visitors should confirm material requirements directly before making business decisions."]},{title:"Intellectual property",content:["Startek names, logos, website design and original content may be protected by applicable intellectual property rights. Third-party names and platforms remain the property of their respective owners."]},{title:"External links",content:["Links to social platforms and other external services are provided for convenience. Startek does not control their availability, content or terms."]},{title:"Responsible use",content:["Visitors should not attempt to disrupt the website, misuse its content or use it in a way that infringes the rights of others or violates applicable law."]}];
+export default function TermsPage(){return <PolicyPage eyebrow="Website policy" title="Terms of Use" intro="General informational terms for using the Startek website." sections={sections}/>}

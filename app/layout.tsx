@@ -13,12 +13,13 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:"https://startek.lk",sameAs:socialLinks.map(link=>link.href)};
+const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:"https://startek.lk",logo:"https://startek.lk/brand/startek.png",sameAs:socialLinks.map(link=>link.href)};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://startek.lk"),
   title: "Startek | Digital, Development & Print Solutions",
   description: "Startek is a Sri Lankan technology and creative solutions company delivering digital marketing, web development, software solutions, printing, signage, packaging and physical branding.",
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Startek (PVT) LTD",
     locale: "en_LK",
+    url: "/",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Startek — Digital. Development. Print." }],
   },
   twitter: {

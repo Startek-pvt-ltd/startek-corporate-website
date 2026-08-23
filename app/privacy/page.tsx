@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import { PolicyPage } from "@/components/PolicyPage";
+
+const title="Privacy Policy | Startek";
+const description="Informational privacy policy for the Startek website.";
+export const metadata:Metadata={title,description,alternates:{canonical:"/privacy"},openGraph:{title,description,type:"website",url:"/privacy",images:[]},twitter:{card:"summary",title,description,images:[]}};
+
+const sections=[{title:"About this policy",content:["This page explains, in general terms, how information may be handled when someone uses the Startek website. It is an informational website policy and is not legal advice."]},{title:"Information you choose to provide",content:["The website includes a project enquiry form. Online delivery is not currently connected, so submitting the form does not send information to Startek. Visitors can instead use the official social channels listed on the Contact page."]},{title:"Technical information",content:["The website hosting platform may process routine technical information needed to deliver and protect the site, such as request, device, browser and security data. Startek does not use this page to claim a specific analytics or advertising setup that has not been implemented."]},{title:"External services",content:["Links to social networks lead to third-party services with their own policies and practices. Startek is not responsible for the content or privacy practices of those external services."]},{title:"Policy updates",content:["This informational policy may be updated as the website, contact systems or business processes change. Material additions should be reflected on this page before they are relied upon."]}];
+export default function PrivacyPage(){return <PolicyPage eyebrow="Website policy" title="Privacy Policy" intro="A conservative overview of privacy considerations for this informational website." sections={sections}/>}

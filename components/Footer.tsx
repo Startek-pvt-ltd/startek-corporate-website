@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { ArrowUp } from "lucide-react";
+import { Logo } from "./Logo";
+const columns=[{title:"Company",links:["About","Work","Insights","Contact"]},{title:"Solutions",links:["Startek Digital","Startek Web Hub","Startek Print Hub"]},{title:"Services",links:["Digital Marketing","Web Development","Branding","Printing"]},{title:"Social",links:["Facebook","Instagram","LinkedIn","YouTube","TikTok"]}];
+export function Footer(){return <footer><div className="container footer-grid"><div className="footer-brand"><Logo/><p>Technology, creativity and execution under one ecosystem.</p></div>{columns.map(column=><div className="footer-column" key={column.title}><p>{column.title}</p>{column.links.map(link=><Link href="#contact" key={link}>{link}</Link>)}</div>)}</div><div className="container footer-bottom"><span>© Startek (PVT) LTD. All rights reserved.</span><div><Link href="#contact">Privacy Policy</Link><Link href="#contact">Terms & Conditions</Link><Link className="back-top" href="#home" aria-label="Back to top"><ArrowUp size={15}/></Link></div></div></footer>}

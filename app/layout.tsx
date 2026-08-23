@@ -1,0 +1,53 @@
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://startek.lk"),
+  title: "Startek | Digital, Development & Print Solutions",
+  description: "Startek is a Sri Lankan technology and creative solutions company delivering digital marketing, web development, software solutions, printing, signage, packaging and physical branding.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
+  openGraph: {
+    title: "Startek | Digital, Development & Print Solutions",
+    description: "Technology, creativity and execution under one connected ecosystem.",
+    type: "website",
+    siteName: "Startek (PVT) LTD",
+    locale: "en_LK",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Startek — Digital. Development. Print." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Startek | Digital, Development & Print Solutions",
+    description: "Technology, creativity and execution under one connected ecosystem.",
+    images: ["/og.png"],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}

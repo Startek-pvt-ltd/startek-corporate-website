@@ -1,0 +1,2 @@
+import { clients } from "@/data/site";
+export function ClientMarquee(){const items=[...clients,...clients];return <div className="marquee" role="region" aria-label="Sample client logo placeholders"><div className="marquee-track">{items.map((client,i)=><div className="client-logo" key={`${client}-${i}`} aria-hidden={i>=clients.length}><span>{client}</span><small>Placeholder</small></div>)}</div></div>}

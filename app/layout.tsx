@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { socialLinks } from "@/data/company";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +12,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
   subsets: ["latin"],
 });
+
+const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:"https://startek.lk",sameAs:socialLinks.map(link=>link.href)};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://startek.lk"),
@@ -46,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema)}}/>
         {children}
       </body>
     </html>

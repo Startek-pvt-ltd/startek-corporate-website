@@ -4,7 +4,7 @@ export type Testimonial = { name:string; role:string; company:string; quote:stri
 export type Article = { category:string; title:string; excerpt:string; date:string; href:string; tone:string };
 
 export const navigation = [
-  {label:"Home",href:"/"},{label:"Solutions",href:"/#solutions"},{label:"Work",href:"/#work"},{label:"About",href:"/#about"},{label:"Insights",href:"/#insights"},{label:"Contact",href:"/#contact"},
+  {label:"Home",href:"/"},{label:"Solutions",href:"/#solutions"},{label:"Work",href:"/work"},{label:"About",href:"/about"},{label:"Insights",href:"/#insights"},{label:"Contact",href:"/contact"},
 ];
 
 export const divisions: Division[] = [
@@ -14,9 +14,9 @@ export const divisions: Division[] = [
 ];
 
 export const projects: Project[] = [
-  {name:"Aster Finance Digital Launch",category:"Digital Experience",division:"Startek Web Hub",services:["UX Strategy","Web Development","CMS"],year:"2026",image:"/projects/aster.png",href:"#contact"},
-  {name:"Northline Retail Growth System",category:"Integrated Campaign",division:"Startek Digital",services:["Paid Media","Content","Analytics"],year:"2026",image:"/projects/northline.png",href:"#contact"},
-  {name:"Kora Foods Brand Rollout",category:"Brand Production",division:"Startek Print Hub",services:["Packaging","Signage","Print"],year:"2025",image:"/projects/kora.png",href:"#contact"},
+  {name:"Aster Finance Digital Launch",category:"Digital Experience",division:"Startek Web Hub",services:["UX Strategy","Web Development","CMS"],year:"2026",image:"/projects/aster.png",href:"/contact?division=web-hub"},
+  {name:"Northline Retail Growth System",category:"Integrated Campaign",division:"Startek Digital",services:["Paid Media","Content","Analytics"],year:"2026",image:"/projects/northline.png",href:"/contact?division=digital"},
+  {name:"Kora Foods Brand Rollout",category:"Brand Production",division:"Startek Print Hub",services:["Packaging","Signage","Print"],year:"2025",image:"/projects/kora.png",href:"/contact?division=print-hub"},
 ];
 
 export const capabilities = ["Sri Lanka Based","End-to-End Solutions","Multi-Disciplinary Expertise","Built for Modern Businesses"];
@@ -40,7 +40,7 @@ export const testimonials: Testimonial[] = [
   {name:"Sample Client",role:"Operations Lead",company:"Demo Enterprise",quote:"Sample testimonial — One connected partner made our website, campaign and launch materials much easier to coordinate."},
 ];
 export const articles: Article[] = [
-  {category:"Web Development",title:"Why Your Business Website Needs More Than Good Design",excerpt:"A high-performing website balances clarity, speed, trust and measurable business outcomes.",date:"August 18, 2026",href:"#contact",tone:"blue"},
-  {category:"Digital Marketing",title:"How Data Improves Social Media Campaigns",excerpt:"Better signals create sharper creative decisions, stronger targeting and more useful reporting.",date:"August 11, 2026",href:"#contact",tone:"cyan"},
-  {category:"Branding",title:"Why Digital and Physical Branding Must Work Together",excerpt:"Customers experience one brand, so every online and offline touchpoint should feel connected.",date:"August 04, 2026",href:"#contact",tone:"violet"},
+  {category:"Web Development",title:"Why Your Business Website Needs More Than Good Design",excerpt:"A high-performing website balances clarity, speed, trust and measurable business outcomes.",date:"August 18, 2026",href:"/contact",tone:"blue"},
+  {category:"Digital Marketing",title:"How Data Improves Social Media Campaigns",excerpt:"Better signals create sharper creative decisions, stronger targeting and more useful reporting.",date:"August 11, 2026",href:"/contact",tone:"cyan"},
+  {category:"Branding",title:"Why Digital and Physical Branding Must Work Together",excerpt:"Customers experience one brand, so every online and offline touchpoint should feel connected.",date:"August 04, 2026",href:"/contact",tone:"violet"},
 ];

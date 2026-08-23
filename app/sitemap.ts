@@ -1,2 +1,2 @@
 import type { MetadataRoute } from "next";
-export default function sitemap(): MetadataRoute.Sitemap{return [{url:"https://startek.lk",lastModified:new Date(),changeFrequency:"weekly",priority:1}]}
+export default function sitemap(): MetadataRoute.Sitemap{const updated=new Date();return [{url:"https://startek.lk",lastModified:updated,changeFrequency:"weekly",priority:1},{url:"https://startek.lk/digital",lastModified:updated,changeFrequency:"monthly",priority:.9},{url:"https://startek.lk/web-hub",lastModified:updated,changeFrequency:"monthly",priority:.9},{url:"https://startek.lk/print-hub",lastModified:updated,changeFrequency:"monthly",priority:.9}]}

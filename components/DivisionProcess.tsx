@@ -1,0 +1,3 @@
+"use client";
+import { motion,useReducedMotion } from "framer-motion";
+export function DivisionProcess({steps}:{steps:{number:string;title:string;text:string}[]}){const reduce=useReducedMotion();return <div className={`division-process count-${steps.length}`}><motion.div className="division-process-line" initial={reduce?false:{scaleX:0}} whileInView={{scaleX:1}} viewport={{once:true,margin:"-100px"}} transition={{duration:1,ease:[.22,1,.36,1]}}/>{steps.map((step,i)=><motion.article key={step.number} initial={reduce?false:{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.065}}><span className="division-process-node"/><p>{step.number}</p><h3>{step.title}</h3><span>{step.text}</span></motion.article>)}</div>}

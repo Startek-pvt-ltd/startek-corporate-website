@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/components/AppLink";
 import Image from "next/image";
 import { ArrowDown,ArrowRight,ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";

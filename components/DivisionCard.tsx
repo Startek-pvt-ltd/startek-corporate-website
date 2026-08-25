@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/AppLink";
 import { ArrowUpRight } from "lucide-react";
 import type { Division } from "@/data/site";
 export function DivisionCard({division,index}:{division:Division;index:number}){return <article className={`division-card ${division.accent}`} id={division.id}><div className="division-top"><span>0{index+1}</span><span className="status-dot">Specialist Division</span></div><p className="division-name">{division.name}</p><h3>{division.headline}</h3><p className="card-copy">{division.description}</p><div className="service-tags">{division.services.map(service=><span key={service}>{service}</span>)}</div><Link className="card-link" href={division.href}>Explore {division.id==="digital"?"Digital":division.id==="web"?"Web Hub":"Print Hub"}<ArrowUpRight size={17}/></Link><div className="card-circuit" aria-hidden="true"/></article>}

@@ -1,9 +1,7 @@
-@import "tailwindcss";
-
 :root{--ink:#05070b;--surface:#0b1018;--surface-2:#0e1520;--blue:#00aeef;--cyan:#27d7ff;--text:#f7f9fc;--muted:#8c95a5;--line:rgba(255,255,255,.1);--container:min(100% - 48px,1360px)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--ink);color:var(--text);font-family:var(--font-inter),Arial,sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--font-inter),Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 90% 10%,rgba(0,174,239,.06),transparent 28%),radial-gradient(circle at 10% 70%,rgba(39,215,255,.025),transparent 24%)}
 a{color:inherit;text-decoration:none}
 button{font:inherit}

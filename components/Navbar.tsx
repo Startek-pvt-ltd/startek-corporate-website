@@ -1,6 +1,6 @@
 "use client";
 import { useEffect,useState } from "react";
-import Link from "next/link";
+import { Link } from "@/components/AppLink";
 import { ArrowUpRight,ChevronDown,Menu,X } from "lucide-react";
 import { divisions,navigation } from "@/data/site";
 import { Logo } from "./Logo";

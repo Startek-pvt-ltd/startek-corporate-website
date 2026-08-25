@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/AppLink";
 import Image from "next/image";
 import { ArrowDown,ArrowRight,ArrowUpRight,BarChart3,Blocks,BriefcaseBusiness,Building2,Cloud,Compass,Database,Flag,Gift,Gauge,LayoutPanelTop,Mail,Megaphone,MessageCircle,MousePointer2,Package,PenTool,Plug,RefreshCw,Search,ShoppingCart,Signpost,Sparkles,Target,TrendingUp,Users,Video,Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";

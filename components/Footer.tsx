@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/AppLink";
 import { ArrowUp } from "lucide-react";
 import { socialLinks } from "@/data/company";
 import { Logo } from "./Logo";

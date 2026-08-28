@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { DivisionCard } from "@/components/DivisionCard";
 import { Reveal } from "@/components/Reveal";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
+import { ClientMarquee } from "@/components/ClientMarquee";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { capabilities,divisions,reasons } from "@/data/site";
@@ -25,6 +26,8 @@ export default function Home(){return <main><Navbar/><Hero/>
   <section className="section why" id="about"><div className="container why-layout"><Reveal><SectionHeading eyebrow="Why Startek" title="Built Differently." copy="A modern partner built to connect thinking, making and measurable business progress."/></Reveal><div className="reasons-grid">{reasons.map((reason,i)=><Reveal key={reason.title} delay={i*.06}><article className="reason-card"><span>0{i+1}</span><h3>{reason.title}</h3><p>{reason.text}</p></article></Reveal>)}</div></div></section>
 
   <section className="section process-section"><div className="container"><Reveal><SectionHeading eyebrow="Our Process" title="From Idea to Impact." copy="A clear, collaborative path from initial discovery to long-term growth."/></Reveal><ProcessTimeline/></div></section>
+
+  <section className="section clients"><div className="container"><Reveal><SectionHeading eyebrow="Our Clients" title="Trusted By Ambitious Brands" align="center"/><p className="placeholder-note">Logo placeholders — real client identities will be added after approval.</p></Reveal></div><ClientMarquee/></section>
 
   <section className="section credibility-section"><div className="container"><Reveal><SectionHeading eyebrow="Working Principles" title="Credibility Is Built Into the Process" copy="We avoid unsupported promises. Every engagement begins with clear requirements, agreed scope and practical next steps."/></Reveal><div className="credibility-grid"><article><span>01</span><h3>Clear Scope</h3><p>Objectives, deliverables and responsibilities are defined before execution begins.</p></article><article><span>02</span><h3>Connected Delivery</h3><p>Digital, development and physical touchpoints are coordinated around one business direction.</p></article><article><span>03</span><h3>Practical Communication</h3><p>Progress, decisions and constraints are communicated clearly throughout the work.</p></article></div></div></section>
 

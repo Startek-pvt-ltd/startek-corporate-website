@@ -31,6 +31,8 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /<title>Startek \| Digital, Development &amp; Print Solutions<\/title>/i);
   assert.match(html, /We build\./);
   assert.match(html, /Digital <i>•<\/i> Development <i>•<\/i> Print/);
+  assert.match(html, /Trusted By Ambitious Brands/);
+  assert.match(html, /class="marquee-track"/);
   assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);
   for (const path of ["digital", "web-hub", "print-hub"]) {
     assert.match(html, new RegExp(`href="/${path}" target="_blank" rel="noopener noreferrer"`));

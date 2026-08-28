@@ -24,3 +24,12 @@ export const process = [
   {number:"04",title:"Launch",text:"Deploy the website, campaign, system or brand asset."},
   {number:"05",title:"Grow",text:"Measure, optimize, support and scale."},
 ];
+
+export const clients = [
+  "CLIENT LOGO 01",
+  "CLIENT LOGO 02",
+  "CLIENT LOGO 03",
+  "CLIENT LOGO 04",
+  "CLIENT LOGO 05",
+  "CLIENT LOGO 06",
+];

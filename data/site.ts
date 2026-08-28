@@ -26,10 +26,10 @@ export const process = [
 ];
 
 export const clients = [
-  "CLIENT LOGO 01",
-  "CLIENT LOGO 02",
-  "CLIENT LOGO 03",
-  "CLIENT LOGO 04",
-  "CLIENT LOGO 05",
-  "CLIENT LOGO 06",
+  {name:"Lavinia Properties",logo:"/clients/lavinia-properties.webp"},
+  {name:"Rice & Kottu Hut",logo:"/clients/rice-kottu-hut.webp"},
+  {name:"Ceylon Chef",logo:"/clients/ceylon-chef.webp"},
+  {name:"UAE Api",logo:"/clients/uae-api.webp"},
+  {name:"Thilina Super",logo:"/clients/thilina-super.webp"},
+  {name:"Yoshani Creative",logo:"/clients/yoshani-creative.webp"},
 ];

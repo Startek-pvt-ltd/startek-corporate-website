@@ -33,6 +33,10 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /Digital <i>•<\/i> Development <i>•<\/i> Print/);
   assert.match(html, /Trusted By Ambitious Brands/);
   assert.match(html, /class="marquee-track"/);
+  for (const logo of ["lavinia-properties", "rice-kottu-hut", "ceylon-chef", "uae-api", "thilina-super", "yoshani-creative"]) {
+    assert.match(html, new RegExp(`/clients/${logo}\\.webp`));
+  }
+  assert.doesNotMatch(html, /CLIENT LOGO|Logo placeholders/);
   assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
   assert.match(html, /href="https:\/\/wa\.me\/94705935320\?text=/);
   assert.match(html, /aria-label="Chat with Startek on WhatsApp"/);

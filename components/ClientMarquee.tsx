@@ -9,7 +9,9 @@ export function ClientMarquee() {
       <div className="marquee-track">
         {items.map((client, index) => (
           <div className="client-logo" key={client.name + "-" + index} aria-hidden={index >= clients.length}>
-            <Image src={client.logo} alt={`${client.name} logo`} width={700} height={700} sizes="(max-width: 580px) 180px, 220px" />
+            <span className="client-logo-media">
+              <Image src={client.logo} alt={`${client.name} logo`} fill sizes="(max-width: 580px) 200px, 250px" />
+            </span>
           </div>
         ))}
       </div>

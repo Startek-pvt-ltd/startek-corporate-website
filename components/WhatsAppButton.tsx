@@ -1,0 +1,18 @@
+import { MessageCircle } from "lucide-react";
+import { Link } from "@/components/AppLink";
+import { whatsappUrl } from "@/data/company";
+
+export function WhatsAppButton() {
+  return (
+    <Link
+      className="whatsapp-float"
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with Startek on WhatsApp"
+      title="Chat with Startek on WhatsApp"
+    >
+      <MessageCircle size={27} strokeWidth={2.2} aria-hidden="true" />
+    </Link>
+  );
+}

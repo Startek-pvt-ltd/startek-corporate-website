@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { socialLinks } from "@/data/company";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,6 +54,7 @@ export default function RootLayout({
       >
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema)}}/>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -34,6 +34,8 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /Trusted By Ambitious Brands/);
   assert.match(html, /class="marquee-track"/);
   assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
+  assert.match(html, /href="https:\/\/wa\.me\/94705935320\?text=/);
+  assert.match(html, /aria-label="Chat with Startek on WhatsApp"/);
   assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);
   for (const path of ["digital", "web-hub", "print-hub"]) {
     assert.match(html, new RegExp(`href="/${path}" target="_blank" rel="noopener noreferrer"`));

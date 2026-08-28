@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Link } from "@/components/AppLink";
 import { whatsappUrl } from "@/data/company";
 
@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       aria-label="Chat with Startek on WhatsApp"
       title="Chat with Startek on WhatsApp"
     >
-      <MessageCircle size={27} strokeWidth={2.2} aria-hidden="true" />
+      <FaWhatsapp size={31} aria-hidden="true" />
     </Link>
   );
 }

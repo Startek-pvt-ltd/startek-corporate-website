@@ -5,12 +5,12 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { InnerHero } from "@/components/InnerHero";
 import { ContactForm } from "@/components/ContactForm";
-import { consultationUrl,socialLinks } from "@/data/company";
+import { consultationUrl,officialEmail,socialLinks } from "@/data/company";
 
 export const metadata:Metadata={title:"Contact Startek | Start a Project",description:"Contact Startek to discuss digital marketing, web development, software solutions, printing, signage, packaging or integrated business solutions.",alternates:{canonical:"/contact"},openGraph:{title:"Contact Startek | Start a Project",description:"Discuss a digital, development, print or integrated project with Startek.",type:"website",url:"/contact",images:[]},twitter:{card:"summary",title:"Contact Startek | Start a Project",description:"Discuss a digital, development, print or integrated project with Startek.",images:[]}};
 
 const contactCards=[
-  {icon:Mail,title:"Email",text:"startek.pvt.ltd11@gmail.com",href:"mailto:startek.pvt.ltd11@gmail.com"},
+  {icon:Mail,title:"Email",text:officialEmail,href:`mailto:${officialEmail}`},
   {icon:Phone,title:"Phone",text:"070 593 5320",href:"tel:+94705935320"},
   {icon:MapPin,title:"Location",text:"STARTEK (PVT) LTD",href:"#location"},
   {icon:Clock3,title:"Availability",text:"9:00 AM – 11:00 PM",href:""},

@@ -1,7 +1,7 @@
 export type Division = { id:string; name:string; kicker:string; headline:string; description:string; services:string[]; href:string; accent:"cyan"|"blue"|"violet" };
 
 export const navigation = [
-  {label:"Home",href:"/"},{label:"Solutions",href:"/#solutions"},{label:"Work",href:"/work"},{label:"About",href:"/about"},{label:"Insights",href:"/#insights"},{label:"Contact",href:"/contact"},
+  {label:"Home",href:"/"},{label:"Solutions",href:"/#solutions"},{label:"Work",href:"/work"},{label:"About",href:"/about"},{label:"Insights",href:"/insights"},{label:"Contact",href:"/contact"},
 ];
 
 export const divisions: Division[] = [
@@ -26,6 +26,7 @@ export const process = [
 ];
 
 export const clients = [
+  // Only include organizations that have a verified client/collaboration relationship with Startek and approval for public display.
   {name:"Lavinia Properties",logo:"/clients/lavinia-properties.webp"},
   {name:"Rice & Kottu Hut",logo:"/clients/rice-kottu-hut.webp"},
   {name:"Ceylon Chef",logo:"/clients/ceylon-chef.webp"},

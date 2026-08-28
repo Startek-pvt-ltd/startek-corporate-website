@@ -9,8 +9,8 @@ export function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Startek on WhatsApp"
-      title="Chat with Startek on WhatsApp"
+      aria-label="Contact Startek on WhatsApp"
+      title="Contact Startek on WhatsApp"
     >
       <FaWhatsapp size={31} aria-hidden="true" />
     </Link>

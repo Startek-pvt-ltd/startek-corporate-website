@@ -39,7 +39,9 @@ test("server-renders the production homepage", async () => {
   assert.doesNotMatch(html, /CLIENT LOGO|Logo placeholders/);
   assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
   assert.match(html, /href="https:\/\/wa\.me\/94705935320\?text=/);
-  assert.match(html, /aria-label="Chat with Startek on WhatsApp"/);
+  assert.match(html, /aria-label="Contact Startek on WhatsApp"/);
+  assert.match(html, /href="\/insights"/);
+  assert.doesNotMatch(html, /Case Studies in Preparation|Portfolio publishing in progress|Insights Publishing Soon/);
   assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);
   for (const path of ["digital", "web-hub", "print-hub"]) {
     assert.match(html, new RegExp(`href="/${path}" target="_blank" rel="noopener noreferrer"`));
@@ -86,4 +88,18 @@ test("contact page offers Cal.com business consultation booking", async () => {
   assert.match(html, /9:00 AM – 11:00 PM/);
   assert.match(html, /title="STARTEK \(PVT\) LTD location on Google Maps"/);
   assert.match(html, /https:\/\/www\.google\.com\/maps\/embed\?pb=/);
+  assert.match(html, /WhatsApp/);
+});
+
+test("insights page renders its dedicated editorial route", async () => {
+  const response = await render("/insights");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Ideas for/);
+  assert.match(html, /Startek Insights is being prepared for publication/);
+  assert.match(html, /Digital Growth/);
+  assert.match(html, /Web &amp; Technology/);
+  assert.match(html, /Brand &amp; Print/);
+  assert.doesNotMatch(html, /fake article|Sample Article/i);
 });

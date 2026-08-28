@@ -33,6 +33,7 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /Digital <i>•<\/i> Development <i>•<\/i> Print/);
   assert.match(html, /Trusted By Ambitious Brands/);
   assert.match(html, /class="marquee-track"/);
+  assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
   assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);
   for (const path of ["digital", "web-hub", "print-hub"]) {
     assert.match(html, new RegExp(`href="/${path}" target="_blank" rel="noopener noreferrer"`));
@@ -65,4 +66,13 @@ test("about page renders Kevin Menuja's leadership portrait", async () => {
   assert.match(html, /Kevin Menuja, Founder of Startek/);
   assert.match(html, /\/team\/kevin-menuja\.webp/);
   assert.doesNotMatch(html, /Kevin Menuja monogram/);
+});
+
+test("contact page offers Cal.com business consultation booking", async () => {
+  const response = await render("/contact");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Book Business Consultation/);
+  assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
 });

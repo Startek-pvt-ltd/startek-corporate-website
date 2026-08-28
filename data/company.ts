@@ -1,6 +1,8 @@
 export type SocialLink={label:string;href:string};
 export type BrandKey="startek"|"digital"|"web-hub"|"print-hub";
 
+export const consultationUrl="https://cal.com/startekpvtltd/business-consultation";
+
 export const brandAssets:Record<BrandKey,{name:string;logo:string}>={
   startek:{name:"Startek (PVT) LTD",logo:"/brand/startek.png"},
   digital:{name:"Startek Digital",logo:"/brand/startek-digital.png"},

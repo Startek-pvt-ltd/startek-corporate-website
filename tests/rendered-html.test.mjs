@@ -77,4 +77,9 @@ test("contact page offers Cal.com business consultation booking", async () => {
   const html = await response.text();
   assert.match(html, /Book Business Consultation/);
   assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
+  assert.match(html, /mailto:startek\.pvt\.ltd11@gmail\.com/);
+  assert.match(html, /tel:\+94705935320/);
+  assert.match(html, /9:00 AM – 11:00 PM/);
+  assert.match(html, /title="STARTEK \(PVT\) LTD location on Google Maps"/);
+  assert.match(html, /https:\/\/www\.google\.com\/maps\/embed\?pb=/);
 });

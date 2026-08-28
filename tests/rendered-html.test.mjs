@@ -56,3 +56,13 @@ test("server-renders legal pages and the custom not-found page", async () => {
   assert.match(missingHtml, /Back to Startek/);
   assert.match(missingHtml, /name="robots" content="noindex, nofollow"/i);
 });
+
+test("about page renders Kevin Menuja's leadership portrait", async () => {
+  const response = await render("/about");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Kevin Menuja, Founder of Startek/);
+  assert.match(html, /\/team\/kevin-menuja\.webp/);
+  assert.doesNotMatch(html, /Kevin Menuja monogram/);
+});

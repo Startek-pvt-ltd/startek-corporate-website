@@ -3,7 +3,7 @@ import { Link } from "@/components/AppLink";
 
 const videoId = "7594636350515596551";
 const videoUrl = `https://www.tiktok.com/@startek.digital/video/${videoId}`;
-const playerUrl = `https://www.tiktok.com/player/v1/${videoId}?controls=1&music_info=1&description=1&rel=0`;
+const playerUrl = `https://www.tiktok.com/player/v1/${videoId}?autoplay=1&muted=1&controls=1&music_info=1&description=1&rel=0`;
 
 export function TikTokFeature() {
   return (
@@ -23,7 +23,7 @@ export function TikTokFeature() {
             src={playerUrl}
             title="Startek Digital agency introduction on TikTok"
             loading="lazy"
-            allow="fullscreen"
+            allow="autoplay; fullscreen"
             allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
           />

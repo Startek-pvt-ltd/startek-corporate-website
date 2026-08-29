@@ -9,6 +9,7 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { DivisionProcess } from "./DivisionProcess";
 import { FAQ } from "./FAQ";
+import { TikTokFeature } from "./TikTokFeature";
 import { brandAssets,divisionSocialLinks,type BrandKey } from "@/data/company";
 
 const iconMap:Record<string,LucideIcon>={message:MessageCircle,target:Target,megaphone:Megaphone,search:Search,sparkles:Sparkles,pen:PenTool,video:Video,trending:TrendingUp,compass:Compass,mail:Mail,chart:BarChart3,users:Users,building:Building2,layout:LayoutPanelTop,cart:ShoppingCart,blocks:Blocks,mouse:MousePointer2,database:Database,refresh:RefreshCw,plug:Plug,gauge:Gauge,cloud:Cloud,wrench:Wrench,briefcase:BriefcaseBusiness,signpost:Signpost,package:Package,gift:Gift,flag:Flag};
@@ -26,6 +27,8 @@ export function DivisionPage({data}:{data:DivisionPageData}){const brandKey=(dat
   <section className="section division-value"><div className="container"><Reveal><SectionHeading eyebrow={data.valueEyebrow} title={data.valueTitle}/></Reveal><div className={`division-value-grid count-${data.valueItems.length}`}>{data.valueItems.map((item,i)=><Reveal key={item.title} delay={i*.05}><article><span>0{i+1}</span><div className="value-icon" aria-hidden="true"><i/></div><h3>{item.title}</h3><p>{item.text}</p></article></Reveal>)}</div></div></section>
 
   <section className="section division-work" id="work"><div className="container"><Reveal><div className="heading-row"><SectionHeading eyebrow={data.projectsEyebrow} title={data.projectsTitle} copy={data.projectsText}/><Link className="text-link" href="/work">{data.projectsCta}<ArrowUpRight size={16} aria-hidden="true"/></Link></div></Reveal><div className="showcase-state capability-showcase"><div>{data.services.slice(0,4).map(service=><strong key={service.title}>{service.title}</strong>)}</div></div></div></section>
+
+  {data.theme==="digital"&&<TikTokFeature/>}
 
   <section className="section division-process-section"><div className="container"><Reveal><SectionHeading eyebrow="Our Process" title={data.processTitle} copy="A transparent, collaborative path shaped around the requirements of each project."/></Reveal><DivisionProcess steps={data.process}/></div></section>
 

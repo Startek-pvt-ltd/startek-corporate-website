@@ -12,7 +12,7 @@ const contentSecurityPolicy = [
   "font-src 'self' data:",
   "img-src 'self' data: blob:",
   "connect-src 'self'",
-  "frame-src https://www.google.com",
+  "frame-src https://www.google.com https://www.tiktok.com",
   "media-src 'none'",
   "worker-src 'self' blob:",
   "manifest-src 'self'",

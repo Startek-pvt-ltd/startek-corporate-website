@@ -33,6 +33,7 @@ test("server-renders the production homepage", async () => {
   const csp=response.headers.get("content-security-policy") ?? "";
   assert.match(csp, /default-src 'self'/);
   assert.match(csp, /frame-src https:\/\/www\.google\.com/);
+  assert.match(csp, /frame-src [^;]*https:\/\/www\.tiktok\.com/);
   assert.match(csp, /frame-ancestors 'none'/);
   assert.doesNotMatch(csp, /unsafe-eval|default-src \*|script-src \*/);
 
@@ -102,6 +103,19 @@ test("contact page offers Cal.com business consultation booking", async () => {
     assert.match(html,new RegExp(`<input(?=[^>]*name="${field}")(?=[^>]*maxlength="${limit}")[^>]*>`,`i`));
   }
   assert.match(html, /<textarea(?=[^>]*name="details")(?=[^>]*maxlength="2000")[^>]*>/i);
+});
+
+test("digital page embeds the official Startek Digital introduction video", async () => {
+  const response = await render("/digital");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Inside Startek Digital/);
+  assert.match(html, /Your Growth Partner in the Digital World/);
+  assert.match(html, /https:\/\/www\.tiktok\.com\/player\/v1\/7594636350515596551\?/);
+  assert.match(html, /title="Startek Digital agency introduction on TikTok"/);
+  assert.match(html, /loading="lazy"/);
+  assert.doesNotMatch(html, /www\.tiktok\.com\/embed\.js/);
 });
 
 test("insights page renders its dedicated editorial route", async () => {

@@ -25,7 +25,7 @@ This starter does not use `wrangler.jsonc`.
 - `vite.config.ts` simulates declared bindings for local development
 - `db/schema.ts` starts intentionally empty
 - `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+- database migration tooling should be added only when D1 is enabled
 
 ## Workspace Auth Headers
 
@@ -92,7 +92,6 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
 - `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
 
 ## Learn More
 

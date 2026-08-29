@@ -26,6 +26,15 @@ test("server-renders the production homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+  assert.match(response.headers.get("strict-transport-security") ?? "", /max-age=63072000/);
+  const csp=response.headers.get("content-security-policy") ?? "";
+  assert.match(csp, /default-src 'self'/);
+  assert.match(csp, /frame-src https:\/\/www\.google\.com/);
+  assert.match(csp, /frame-ancestors 'none'/);
+  assert.doesNotMatch(csp, /unsafe-eval|default-src \*|script-src \*/);
 
   const html = await response.text();
   assert.match(html, /<title>Startek \| Digital, Development &amp; Print Solutions<\/title>/i);
@@ -89,6 +98,10 @@ test("contact page offers Cal.com business consultation booking", async () => {
   assert.match(html, /title="STARTEK \(PVT\) LTD location on Google Maps"/);
   assert.match(html, /https:\/\/www\.google\.com\/maps\/embed\?pb=/);
   assert.match(html, /WhatsApp/);
+  for (const [field,limit] of [["fullName",100],["email",254],["phone",32],["company",120]]) {
+    assert.match(html,new RegExp(`<input(?=[^>]*name="${field}")(?=[^>]*maxlength="${limit}")[^>]*>`,`i`));
+  }
+  assert.match(html, /<textarea(?=[^>]*name="details")(?=[^>]*maxlength="2000")[^>]*>/i);
 });
 
 test("insights page renders its dedicated editorial route", async () => {

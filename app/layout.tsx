@@ -15,6 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:"https://startek.lk",logo:"https://startek.lk/brand/startek.png",sameAs:socialLinks.map(link=>link.href)};
+const organizationSchemaJson=JSON.stringify(organizationSchema).replace(/</g,"\\u003c");
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://startek.lk"),
@@ -52,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema)}}/>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:organizationSchemaJson}}/>
         {children}
         <WhatsAppButton />
       </body>

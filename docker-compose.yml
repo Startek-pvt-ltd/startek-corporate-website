@@ -1,0 +1,20 @@
+services:
+  startek-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: startek-website
+
+    restart: unless-stopped
+
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+
+    ports:
+      - "127.0.0.1:3100:3000"
+
+    security_opt:
+      - no-new-privileges:true

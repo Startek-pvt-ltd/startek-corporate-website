@@ -105,7 +105,7 @@ test("contact page offers Cal.com business consultation booking", async () => {
   assert.match(html, /<textarea(?=[^>]*name="details")(?=[^>]*maxlength="2000")[^>]*>/i);
 });
 
-test("digital page embeds the official Startek Digital introduction video", async () => {
+test("digital page embeds both official Startek Digital videos", async () => {
   const response = await render("/digital");
   assert.equal(response.status, 200);
 
@@ -113,9 +113,11 @@ test("digital page embeds the official Startek Digital introduction video", asyn
   assert.match(html, /Inside Startek Digital/);
   assert.match(html, /Your Growth Partner in the Digital World/);
   assert.match(html, /https:\/\/www\.tiktok\.com\/player\/v1\/7594636350515596551\?/);
+  assert.match(html, /https:\/\/www\.tiktok\.com\/player\/v1\/7610387187787500820\?/);
   assert.match(html, /autoplay=1&amp;muted=1/);
   assert.match(html, /allow="autoplay; fullscreen"/);
   assert.match(html, /title="Startek Digital agency introduction on TikTok"/);
+  assert.match(html, /title="Startek Digital featured video on TikTok"/);
   assert.match(html, /loading="lazy"/);
   assert.doesNotMatch(html, /www\.tiktok\.com\/embed\.js/);
 });

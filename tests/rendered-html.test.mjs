@@ -114,8 +114,10 @@ test("digital page embeds both official Startek Digital videos", async () => {
   assert.match(html, /Your Growth Partner in the Digital World/);
   assert.match(html, /https:\/\/www\.tiktok\.com\/player\/v1\/7594636350515596551\?/);
   assert.match(html, /https:\/\/www\.tiktok\.com\/player\/v1\/7610387187787500820\?/);
-  assert.match(html, /autoplay=1&amp;muted=1/);
-  assert.match(html, /allow="autoplay; fullscreen"/);
+  assert.doesNotMatch(html, /autoplay=1/);
+  assert.doesNotMatch(html, /muted=1/);
+  assert.match(html, /allow="fullscreen"/);
+  assert.match(html, /Press play to watch with sound/);
   assert.match(html, /title="Startek Digital agency introduction on TikTok"/);
   assert.match(html, /title="Startek Digital featured video on TikTok"/);
   assert.match(html, /loading="lazy"/);

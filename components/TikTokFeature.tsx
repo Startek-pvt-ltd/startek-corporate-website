@@ -6,7 +6,7 @@ const videos = [
   { id: "7610387187787500820", label: "Startek Digital featured video" },
 ];
 
-const playerOptions = "autoplay=1&muted=1&controls=1&music_info=1&description=1&rel=0";
+const playerOptions = "controls=1&music_info=1&description=1&rel=0";
 
 export function TikTokFeature() {
   return (
@@ -16,7 +16,7 @@ export function TikTokFeature() {
           <p className="eyebrow"><span>+</span>Inside Startek Digital</p>
           <div className="tiktok-feature-icon" aria-hidden="true"><Play size={22}/></div>
           <h2 id="tiktok-feature-title">Your Growth Partner in the Digital World.</h2>
-          <p>Meet the social media marketing agency helping businesses grow through digital marketing, branding and social media.</p>
+          <p>Meet the social media marketing agency helping businesses grow through digital marketing, branding and social media. Press play to watch with sound.</p>
           <Link className="outline-button" href="https://www.tiktok.com/@startek.digital" target="_blank" rel="noopener noreferrer">
             Follow on TikTok <ArrowUpRight size={16} aria-hidden="true"/>
           </Link>
@@ -28,7 +28,7 @@ export function TikTokFeature() {
                 src={`https://www.tiktok.com/player/v1/${video.id}?${playerOptions}`}
                 title={`${video.label} on TikTok`}
                 loading="lazy"
-                allow="autoplay; fullscreen"
+                allow="fullscreen"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
               />

@@ -50,6 +50,7 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /href="https:\/\/cal\.com\/startekpvtltd\/business-consultation" target="_blank" rel="noopener noreferrer"/);
   assert.match(html, /href="https:\/\/wa\.me\/94705935320\?text=/);
   assert.match(html, /aria-label="Contact Startek on WhatsApp"/);
+  assert.match(html, /© 2026 STARTEK \(PVT\) LTD\. All rights reserved\./);
   assert.match(html, /href="\/insights"/);
   assert.doesNotMatch(html, /Case Studies in Preparation|Portfolio publishing in progress|Insights Publishing Soon/);
   assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);

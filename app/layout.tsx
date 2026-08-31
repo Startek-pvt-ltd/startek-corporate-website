@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { socialLinks } from "@/data/company";
+import { siteUrl, socialLinks } from "@/data/company";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 
@@ -14,11 +14,11 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:"https://startek.lk",logo:"https://startek.lk/brand/startek.png",sameAs:socialLinks.map(link=>link.href)};
+const organizationSchema={"@context":"https://schema.org","@type":"Organization",name:"Startek (PVT) LTD",url:siteUrl,logo:`${siteUrl}/brand/startek.png`,sameAs:socialLinks.map(link=>link.href)};
 const organizationSchemaJson=JSON.stringify(organizationSchema).replace(/</g,"\\u003c");
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://startek.lk"),
+  metadataBase: new URL(siteUrl),
   title: "Startek | Digital, Development & Print Solutions",
   description: "Startek is a Sri Lankan technology and creative solutions company delivering digital marketing, web development, software solutions, printing, signage, packaging and physical branding.",
   alternates: { canonical: "/" },

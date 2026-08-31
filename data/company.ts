@@ -1,6 +1,7 @@
 export type SocialLink={label:string;href:string};
 export type BrandKey="startek"|"digital"|"web-hub"|"print-hub";
 
+export const siteUrl="https://startek-corporate-platform.vercel.app";
 export const consultationUrl="https://cal.com/startekpvtltd/business-consultation";
 export const officialEmail="startek.pvt.ltd11@gmail.com";
 export const whatsappNumber="94705935320";

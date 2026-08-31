@@ -53,7 +53,7 @@ test("server-renders the production homepage", async () => {
   assert.match(html, /© 2026 STARTEK \(PVT\) LTD\. All rights reserved\./);
   assert.match(html, /href="\/insights"/);
   assert.doesNotMatch(html, /Case Studies in Preparation|Portfolio publishing in progress|Insights Publishing Soon/);
-  assert.match(html, /rel="canonical" href="https:\/\/startek\.lk"/i);
+  assert.match(html, /rel="canonical" href="https:\/\/startek-corporate-platform\.vercel\.app"/i);
   for (const path of ["digital", "web-hub", "print-hub"]) {
     assert.match(html, new RegExp(`href="/${path}" target="_blank" rel="noopener noreferrer"`));
   }
